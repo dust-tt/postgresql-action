@@ -5,6 +5,10 @@ branding:
   icon: database
   color: blue
 inputs:
+  postgresql docker image:
+    description: Base Docker image name to use (e.g. 'postgres' for official, 'bitnami/postgresql' for Bitnami)
+    required: false
+    default: "postgres"
   # See https://hub.docker.com/_/postgres for supported versions
   # and further details on input environment variables
   postgresql version:
@@ -14,23 +18,23 @@ inputs:
   postgresql db:
     description: POSTGRES_DB - name for the default database that is created
     required: false
-    default: ''
+    default: ""
   postgresql user:
     description: POSTGRES_USER - create the specified user with superuser power
     required: false
-    default: ''
+    default: ""
   postgresql password:
     description: POSTGRES_PASSWORD - superuser password
     required: false
-    default: ''
+    default: ""
   postgresql init scripts:
     description: POSTGRES_INIT_SCRIPTS - directory containing DB init scripts
     required: false
-    default: ''
+    default: ""
   postgresql conf:
     description: POSTGRES_CONF - postgres configurations
     required: false
-    default: ''
+    default: ""
   postgresql port:
     description: POSTGRES_PORT - port to bind to the docker
     required: false
@@ -38,7 +42,7 @@ inputs:
   postgresql auth:
     description: POSTGRES_AUTH - set auth method for host connections
     required: false
-    default: ''
+    default: ""
 runs:
   using: docker
   env:
